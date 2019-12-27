@@ -30,17 +30,30 @@ arr.reshape(4,4) // [[0,1,2,3], [4,5,6,7], [8,9,10,11], [12,13,14,15]]
 arr.max() / arr.min() => Max / Min value of array
 arr.argmax() arr.argmin() => Index of max / min value
 
-- Array slices
-In numpy arrays, when you slice an array and set it to a variable, you're referencing the same array in memory, not a new one. For example:
+# Array slices
+Numpy arrays are different than python arrays because they're able to broadcast, or setting values with index ranges. In numpy arrays, when you slice an array and set it to a variable, you're referencing the same array in memory, not a new one. For example:
 arr = np.arange(0,100)
 arr2 = arr[:10]
 
 To copy, you need to specify:
 arr2 = arr[:10].copy()
 
-- Indexing of matrices (2d arrays)
+# Indexing of matrices (2d arrays)
 We can do double bracker format: arr[1][2]
 or single bracket format: arr[1, 2]
 
 We can do matrix slicing, for example:
 arr2d = arr[:2, :1] // This would grab until row 2, and columns until 1 (not included)
+
+# Fancy indexing: We can select whole rows in any order
+arr2d = [[9, 4, 6, 8]]  // This will select rows 9, 4, 6 and 8 and return them as a matrix in that order.
+
+# Applying operations to arrays
+arr = array([3,4,5,6,7])
+bool_arr = arr > 5 // [False, False, False, True, True]
+
+- Conditional selection
+arr[bool_arr] // [6,7]
+
+Or more concise:
+arr[arr > 5] // arr > 5 creates a boolean array map that can be used to index the original array, like a filter.
