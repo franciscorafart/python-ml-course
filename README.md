@@ -73,6 +73,8 @@ Universal array functions -> Math operations that broadcast through all elements
 
 # PANDAS
 
+- Series
+
 Pandas series are like hashes / dictionaries. We can pass any data structure into them (list, dictionary, numpy array, function) and it will store them in order, with number index (key) by default.
 
 `my_data = [10,20,30]`
