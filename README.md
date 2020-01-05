@@ -94,3 +94,17 @@ a    10
 b    20
 c    30
 dtype: int64
+
+# Data Frames
+- Data Frame notes in the corresponding `Francisco` Jupyter notebooks
+- MultiIndex notes in the corresponding `Francisco` Jupyter notebooks
+
+- Missing data
+If data frame has missing `NaN` data, we can eliminate those rows or fill in the data with
+a)  df.dropna() # Drops rows with `NaN` data
+    df.dropna(thresh=3) # Drops rows with 3 or more `NaN` values
+    df.dropna(axis=1) # Drops columns with `NaN` values
+b)  df.fillna(value=3) # fills `NaN` data with value of `3`
+    df['A'].fillna(value=df['A'].mean()) # fills `NaN` values in column `A` with the mean of all available values in column `A`
+
+- Group By method in the corresponding `Francisco` Jupyter notebook
